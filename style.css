@@ -1,0 +1,299 @@
+
+/* ========================================
+   1. GLOBAL RESET
+   ======================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* ========================================
+   2. BODY
+   ======================================== */
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f1f5f9;
+    color: #1e293b;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* ========================================
+   3. HEADER
+   ======================================== */
+
+header {
+    background-color: #0f766e;
+    color: #ffffff;
+    text-align: center;
+    padding: 32px 20px;
+}
+
+header h1 {
+    font-size: 2.2rem;
+    margin-bottom: 8px;
+}
+
+header p {
+    font-size: 1rem;
+    color: #ccfbf1;
+}
+
+/* ========================================
+   4. MAIN CONTENT
+   ======================================== */
+
+main {
+    width: 100%;
+    max-width: 700px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+/* ========================================
+   5. SECTION CARDS
+   ======================================== */
+
+section {
+    background-color: #ffffff;
+    padding: 24px;
+    margin-bottom: 24px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.06);
+}
+
+section h2 {
+    font-size: 1.4rem;
+    color: #0f172a;
+    margin-bottom: 18px;
+}
+
+/* ========================================
+   6. FORM LAYOUT - FLEXBOX
+   ======================================== */
+
+#note-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+label {
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font: inherit;
+    background-color: #ffffff;
+    color: #1e293b;
+}
+
+input:focus,
+select:focus {
+    outline: 2px solid #0f766e;
+    outline-offset: 2px;
+    border-color: #0f766e;
+}
+
+/* ========================================
+   7. BUTTONS
+   ======================================== */
+
+button {
+    background-color: #0f766e;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    padding: 12px 18px;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease,
+                transform 0.2s ease;
+}
+
+#note-form button {
+    align-self: flex-start;
+    margin-top: 6px;
+}
+
+button:hover {
+    background-color: #115e59;
+    transform: translateY(-1px);
+}
+
+button:focus-visible {
+    outline: 3px solid #14b8a6;
+    outline-offset: 3px;
+}
+
+/* ========================================
+   8. SEARCH AND NOTE COUNT
+   ======================================== */
+
+#search-input {
+    margin-bottom: 16px;
+}
+
+#note-count {
+    font-size: 0.95rem;
+    color: #475569;
+    margin-bottom: 16px;
+}
+
+/* ========================================
+   9. NOTES LIST
+   ======================================== */
+
+#notes-list {
+    list-style: none;
+}
+
+.note-card {
+    background-color: #ffffff;
+    padding: 16px;
+    border: 1px solid #e2e8f0;
+    border-left: 5px solid #94a3b8;
+    border-radius: 8px;
+    margin-bottom: 14px;
+    overflow-wrap: anywhere;
+}
+
+.note-text {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    white-space: pre-wrap;
+}
+
+.note-category {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 3px 9px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
+.note-date {
+    display: block;
+    font-size: 0.8rem;
+    color: #64748b;
+    margin-bottom: 12px;
+}
+
+.delete-button {
+    background-color: #dc2626;
+    padding: 8px 12px;
+    font-size: 0.9rem;
+}
+
+.delete-button:hover {
+    background-color: #991b1b;
+}
+
+/* ========================================
+   10. CATEGORY STYLES
+   ======================================== */
+
+/* Personal notes - teal */
+
+.category-personal {
+    border-left-color: #0d9488;
+}
+
+.category-personal .note-category {
+    background-color: #ccfbf1;
+    color: #115e59;
+}
+
+/* Work notes - dark red */
+
+.category-work {
+    border-left-color: #991b1b;
+}
+
+.category-work .note-category {
+    background-color: #fee2e2;
+    color: #991b1b;
+}
+
+/* Study notes - blue */
+
+.category-study {
+    border-left-color: #2563eb;
+}
+
+.category-study .note-category {
+    background-color: #dbeafe;
+    color: #1d4ed8;
+}
+
+/* ========================================
+   11. VALIDATION ERROR
+   ======================================== */
+
+#error-message {
+    color: #dc2626;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-top: 12px;
+}
+
+/* ========================================
+   12. FOOTER
+   ======================================== */
+
+footer {
+    background-color: #e2e8f0;
+    color: #475569;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+    font-size: 0.9rem;
+}
+
+/* ========================================
+   13. RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 600px) {
+    header {
+        padding: 24px 16px;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    main {
+        margin: 20px auto;
+        padding: 0 12px;
+    }
+
+    section {
+        padding: 18px;
+    }
+
+    #note-form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    #note-form button {
+        width: 100%;
+        align-self: stretch;
+    }
+
+    .note-card {
+        padding: 12px;
+    }
+}
